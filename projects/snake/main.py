@@ -10,7 +10,6 @@ screen.setup(width = 1.0, height = 1.0) # max res
 screen.bgcolor("black")
 screen.title("My Snake Game")
 
-
 ## removing window buttons
 canvas = screen.getcanvas()
 root = canvas.winfo_toplevel()
@@ -50,7 +49,7 @@ while game_on:
         score.gameover()
 
     #  Collision Detection with Tail
-    for segment in snake.segments:
+    for segment in snake.segments: # could always iterate through [1:5] but, stayed with this approach due to readability
         if segment == snake.head:
             pass
         elif snake.head.distance(segment) < 10:
