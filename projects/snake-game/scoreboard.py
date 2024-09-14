@@ -31,11 +31,12 @@ class Scoreboard(Turtle):
         self.score = 0
         self.write_score()
 
-    def read_hs(self):
+    @staticmethod
+    def read_hs():
         with open(PATH, "r") as file:
             hs = file.read()
         return str(hs)
-
-    def write_hs(self, hs):
+    @staticmethod
+    def write_hs(hs):
         with open(PATH, "w") as file:
             file.write(str(hs))
